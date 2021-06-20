@@ -97,6 +97,8 @@ namespace QuartzServiceWithDBLogs
                         );
                     });
 
+                    services.AddHostedService<NotificationWorker>();
+
                     // Make sure Quartz waits for jobs to end before exiting
                     services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
                 })
